@@ -1,4 +1,7 @@
+# ++++++++++++++++++
 # Zadanie 1
+# ++++++++++++++++++
+
 list_a = []
 list_b = []
 list_c = []
@@ -39,7 +42,10 @@ for i in range(10):
 
 print(list_f)
 
+# ++++++++++++++++++
 # Zadanie 2
+# ++++++++++++++++++
+
 list_a = []
 list_b = []
 list_c = []
@@ -92,7 +98,9 @@ while i < 10 :
 
 print(list_f)
 
+# ++++++++++++++++++
 # Zadanie 3
+# ++++++++++++++++++
 
 
 def ile_ujemnych(alist):
@@ -106,7 +114,9 @@ def ile_ujemnych(alist):
 list_a = [-4, 6, -3, 6, 8, -6, -5, -6, 8, 5, 3, -5]
 print(f'W liscie jest {ile_ujemnych(list_a)} liczb ujemnych')
 
+# ++++++++++++++++++
 # Zadanie 4
+# ++++++++++++++++++
 
 
 def iloczyn(alist):
@@ -117,8 +127,10 @@ def iloczyn(alist):
 
 print(f'Iloczyn liczb wynosi: {iloczyn(list_a)}')
 
-
+# ++++++++++++++++++
 # Zadanie 5
+# ++++++++++++++++++
+
 
 def minmax(alist):
     res_min = alist[0]
@@ -132,7 +144,9 @@ def minmax(alist):
 
 print(f"(min, max) = {minmax(list_a)}")
 
+# ++++++++++++++++++
 # Zadanie 6
+# ++++++++++++++++++
 
 
 def suma_przemienna(alist):
@@ -147,7 +161,9 @@ def suma_przemienna(alist):
 
 print(f'Suma przemienna wynosi: {suma_przemienna(list_a)}')
 
+# ++++++++++++++++++
 # Zadanie 7
+# ++++++++++++++++++
 
 list_b = [2, 3, 7]
 
@@ -163,7 +179,9 @@ def uzupelnij_kolejne(alist):
 uzupelnij_kolejne(list_b)
 print(list_b)
 
+# ++++++++++++++++++
 # Zadanie 8
+# ++++++++++++++++++
 
 list_c = []
 
@@ -181,7 +199,9 @@ for k in range(2, 100):
 
 print(list_c)
 
+# ++++++++++++++++++
 # Zadanie 9
+# ++++++++++++++++++
 
 
 def list_swap_first_last(alist):
@@ -194,11 +214,64 @@ print(f'Zad 9a: {list_b}')
 
 
 def list_move_right(alist):
-    for n in range(0, len(alist) - 2):
+    last = alist[-1]
+    n = len(alist) - 2
+    while n >= 0:
         alist[n+1] = alist[n]
-    alist[0] = alist[-1]
+        n -= 1
+    alist[0] = last
 
 
 list_move_right(list_b)
 print(f'Zad 9b: {list_b}')
 
+
+def par_zero(alist):
+    for n in range(len(alist) - 1):
+        if alist[n] % 2 == 0:
+            alist[n] = 0
+
+
+par_zero(list_b)
+print(f'Zad 9c: {list_b}')
+
+
+def zastap_suma_sasiadow(alist):
+    for n in range(1, len(alist) - 2):
+        alist[n] = alist[n-1] + alist[n+1]
+        # print(f'Zad 9d_{n}: {list_b}')
+
+
+zastap_suma_sasiadow(list_b)
+print(f'Zad 9d: {list_b}')
+
+
+def usun_srodek(alist):
+    if (len(alist) % 2) == 0:
+        del alist[len(alist) // 2]
+        del alist[len(alist) // 2]
+    else:
+        del alist[len(alist) // 2]
+
+
+usun_srodek(list_b)
+print(f'Zad 9e_1: {list_b}')
+list_b.append(9)
+usun_srodek(list_b)
+print(f'Zad 9e_2: {list_b}')
+
+
+def par_poczatek(alist):
+    temp = []
+    for x in alist:
+        if (x % 2) == 0:
+            temp.append(x)
+    for x in alist:
+        if (x % 2) == 1:
+            temp.append(x)
+    for n in range(len(alist) - 1):
+        alist[n] = temp[n]
+
+
+par_poczatek(list_b)
+print(f'Zad 9f: {list_b}')
