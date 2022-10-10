@@ -92,7 +92,7 @@ while i < 10:
 print(list_e)
 
 i = 0
-while i < 10 :
+while i < 10:
         list_f.append(i % 5)
         i += 1
 
@@ -103,7 +103,7 @@ print(list_f)
 # ++++++++++++++++++
 
 
-def ile_ujemnych(alist):
+def ile_ujemnych(alist: list):
     result = 0
     for x in alist:
         if x < 0:
@@ -119,11 +119,12 @@ print(f'W liscie jest {ile_ujemnych(list_a)} liczb ujemnych')
 # ++++++++++++++++++
 
 
-def iloczyn(alist):
+def iloczyn(alist: list):
     result = 1
     for x in alist:
         result *= x
     return result
+
 
 print(f'Iloczyn liczb wynosi: {iloczyn(list_a)}')
 
@@ -132,7 +133,7 @@ print(f'Iloczyn liczb wynosi: {iloczyn(list_a)}')
 # ++++++++++++++++++
 
 
-def minmax(alist):
+def minmax(alist: list):
     res_min = alist[0]
     res_max = alist[0]
     for x in alist:
@@ -142,6 +143,7 @@ def minmax(alist):
             res_max = x
     return res_min, res_max
 
+
 print(f"(min, max) = {minmax(list_a)}")
 
 # ++++++++++++++++++
@@ -149,7 +151,7 @@ print(f"(min, max) = {minmax(list_a)}")
 # ++++++++++++++++++
 
 
-def suma_przemienna(alist):
+def suma_przemienna(alist: list):
     result = 0
     list_len = len(alist)
     for n in range(list_len):
@@ -158,6 +160,7 @@ def suma_przemienna(alist):
         else:
             result -= alist[n]
     return result
+
 
 print(f'Suma przemienna wynosi: {suma_przemienna(list_a)}')
 
@@ -168,7 +171,7 @@ print(f'Suma przemienna wynosi: {suma_przemienna(list_a)}')
 list_b = [2, 3, 7]
 
 
-def uzupelnij_kolejne(alist):
+def uzupelnij_kolejne(alist: list):
     n = 0
     while len(alist) < 10:
         if not (n in alist):
@@ -204,7 +207,7 @@ print(list_c)
 # ++++++++++++++++++
 
 
-def list_swap_first_last(alist):
+def list_swap_first_last(alist: list):
     alist[0], alist[-1] = alist[-1], alist[0]
 
 
@@ -213,7 +216,7 @@ list_swap_first_last(list_b)
 print(f'Zad 9a: {list_b}')
 
 
-def list_move_right(alist):
+def list_move_right(alist: list):
     last = alist[-1]
     n = len(alist) - 2
     while n >= 0:
@@ -226,7 +229,7 @@ list_move_right(list_b)
 print(f'Zad 9b: {list_b}')
 
 
-def par_zero(alist):
+def par_zero(alist: list):
     for n in range(len(alist) - 1):
         if alist[n] % 2 == 0:
             alist[n] = 0
@@ -236,7 +239,7 @@ par_zero(list_b)
 print(f'Zad 9c: {list_b}')
 
 
-def zastap_suma_sasiadow(alist):
+def zastap_suma_sasiadow(alist: list):
     for n in range(1, len(alist) - 2):
         alist[n] = alist[n-1] + alist[n+1]
         # print(f'Zad 9d_{n}: {list_b}')
@@ -246,7 +249,7 @@ zastap_suma_sasiadow(list_b)
 print(f'Zad 9d: {list_b}')
 
 
-def usun_srodek(alist):
+def usun_srodek(alist: list):
     if (len(alist) % 2) == 0:
         del alist[len(alist) // 2]
         del alist[len(alist) // 2]
@@ -261,7 +264,7 @@ usun_srodek(list_b)
 print(f'Zad 9e_2: {list_b}')
 
 
-def par_poczatek(alist):
+def par_poczatek(alist: list):
     temp = []
     for x in alist:
         if (x % 2) == 0:
@@ -275,3 +278,68 @@ def par_poczatek(alist):
 
 par_poczatek(list_b)
 print(f'Zad 9f: {list_b}')
+
+
+def second_biggest(alist: list):
+    gmax = alist[0]
+    result = alist[0]
+    for x in alist:
+        if x > gmax:
+            gmax = x
+    for x in alist:
+        if (x > result) and (x < gmax):
+            result = x
+    return result
+
+
+print(f'Zad 9g: {second_biggest(list_b)}')
+
+
+def is_asc(alist):
+    for n in range(len(alist) - 1):
+        if alist[n+1] < alist[n]:
+            return False
+    return True
+
+
+print(f'Zad 9h: {is_asc(list_b)}')
+
+
+def has_eq_neighbours(alist):
+    for n in range(len(alist) - 1):
+        if alist[n+1] == alist[n]:
+            return True
+    return False
+
+
+print(f'Zad 9i: {has_eq_neighbours(list_b)}')
+
+
+def has_eq(alist):
+    temp = []
+    for x in alist:
+        if x not in temp:
+            temp.append(x)
+        else:
+            return True
+    return False
+
+
+print(f'Zad 9j_1: {has_eq([3,4,6,4,7,8,6])}')
+print(f'Zad 9j_2: {has_eq([1,2,3,4,5])}')
+
+
+def equals(list1, list2):
+    if len(list1) != len(list2):
+        return False
+    for n in range(len(list1)):
+        if list1[n] != list2[n]:
+            return False
+    return True
+
+
+print(f'Zad 10_1: {equals([2,3,4], [2,3,4])}')
+print(f'Zad 10_2: {equals([0,0,0,9], [0,0,0])}')
+
+
+
