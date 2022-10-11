@@ -70,12 +70,12 @@ def matrix_sum(a: list[list[int]], b: list[list[int]]):
     return c
 
 
-def matrix_product(a: list[list[int]], b: list[list[int]]):
-    c: list[list[int]] = a
-    for i in range(len(c)):
-        for j in range(len(c[i])):
-            c[i][j] *= b[i][j]
-    return c
+# def matrix_product(a: list[list[int]], b: list[list[int]]):
+#     c: list[list[int]] = a
+#     for i in range(len(c)):
+#         for j in range(len(c[i])):
+#             c[i][j] *= b[i][j]
+#     return c
 
 # ++++ main ++++
 def main():
@@ -89,6 +89,7 @@ def main():
     print(list2d_1)
     print(list2d_2)
     print(matrix_sum([[1, 2, 3], [4, 5, 6]], [[1, 1, 1], [1, 1, 1]]))
+    # print(matrix_product([[1, 2, 3], [4, 5, 6]], [[1, 1, 1], [1, 1, 1]]))
 
 if __name__ == "__main__":
     main()
