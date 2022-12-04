@@ -1,0 +1,63 @@
+D:\GitHub\OOP_166309\probne_kol_1\venv\Scripts\python.exe D:/GitHub/OOP_166309/probne_kol_1/main.py
+Boisko wybudowane w roku 1999, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+Boisko wybudowane w roku 1999, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+Boisko wybudowane w roku 1999, o długości 100 metrów i szerokości 50 metrów. 
+Pole powierzchni: 5000 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+150
+==========================
+Boisko wybudowane w roku 1990, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+10200
+==========================
+Boisko wybudowane w roku 2030, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+Boisko wybudowane w roku 2022, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+==========================
+Boisko wybudowane w roku 1999, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+Nazwa: Słoneczny stadion.
+Nazwa zwyczajowa: Słoneczko.
+Pojemność stadionu: 10000 osób.
+==========================
+Boisko wybudowane w roku 1999, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+Nazwa: Słoneczny stadion.
+Pojemność stadionu: 10000 osób.
+==========================
+Boisko wybudowane w roku 2030, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+Nazwa: Słoneczny stadion.
+Nazwa zwyczajowa: Słoneczko.
+Pojemność stadionu: 10000 osób.
+==========================
+Boisko wybudowane w roku 2022, o długości 150 metrów i szerokości 68 metrów. 
+Pole powierzchni: 10200 mkw.
+Adres: Słoneczna 10, 10-100 Olsztyn.
+Nazwa: Słoneczny stadion.
+Nazwa zwyczajowa: Słoneczko.
+Pojemność stadionu: 10000 osób.
+==========================
+False
+==========================
+True
+==========================
+False
+
+Process finished with exit code 0
