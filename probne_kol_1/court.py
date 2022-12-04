@@ -51,8 +51,8 @@ class Court:
         self.__address = address
 
     @year_built.setter
-    def year_built(self, year_built: int) -> None:
-        self.__year_built = year_built
+    def year_built(self, value: int) -> None:
+        self.__year_built = value
 
     def area(self) -> float:
         return self.__width * self.__length
