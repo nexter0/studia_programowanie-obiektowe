@@ -1,6 +1,10 @@
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
+import java.lang.Math;
 
 public class Main {
+    public static Random r = new Random();
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
@@ -13,8 +17,8 @@ public class Main {
         int[] array = new int[size];
         generate(array);
 
-        for(int i = 0; i < size; i++) {
-            System.out.print(array[i] + " ");
+        for(int x : array) {
+            System.out.print(x + " ");
         }
 
         System.out.print("\nOdd elements: " + howManyOdd(array));
@@ -25,15 +29,18 @@ public class Main {
         System.out.print("\nBiggest element: " + max(array) + " repeated " + howManyMaxInstances(array) + " times");
         System.out.print("\nSum of positive numbers: " + sumOfPositive(array));
         System.out.print("\nSum of negative numbers: " + sumOfNegative(array));
+        System.out.print("\nLongest sequence of positive numbers: " + longestPositiveSequence(array));
+        reversePart(array, 1, 4);
+        signum(array);
     }
 
-    public static int getRandomNumber(int min, final int max) {
-        return (int) ((Math.random() * (max - min)) + min);
+    public static int getRandomNumber() {
+        return Main.r.nextInt(1999) - 999;
     }
 
     public static void generate(int[] array) {
         for(int i = 0; i < array.length; i++) {
-            array[i] = Main.getRandomNumber(-999, 1000);
+            array[i] = Main.getRandomNumber();
         }
     }
 
@@ -53,7 +60,7 @@ public class Main {
 
     public static int howManyPositive(int[] array) {
         int result = 0;
-        for(int x : array) {
+        for (int x : array) {
             if (x > 0) {
                 result++;
             }
@@ -63,7 +70,7 @@ public class Main {
 
     public static int howManyZeros(int[] array) {
         int result = 0;
-        for(int x : array) {
+        for (int x : array) {
             if (x == 0) {
                 result++;
             }
@@ -73,7 +80,7 @@ public class Main {
 
     public static int howManyNegative(int[] array) {
         int result = 0;
-        for(int x : array) {
+        for (int x : array) {
             if (x < 0) {
                 result++;
             }
@@ -83,7 +90,7 @@ public class Main {
 
     public static int max(int[] array) {
         int max = array[0];
-        for(int x : array) {
+        for (int x : array) {
             if (x > max) {
                 max = x;
             }
@@ -94,7 +101,7 @@ public class Main {
     public static int howManyMaxInstances(int[] array) {
         int result = 1;
         int max = array[0];
-        for(int x : array) {
+        for (int x : array) {
             if (x == max) {
                 result++;
             }
@@ -108,7 +115,7 @@ public class Main {
 
     public static int sumOfPositive(int[] array) {
         int result = 0;
-        for(int x : array) {
+        for (int x : array) {
             if (x > 0) {
                 result += x;
             }
@@ -118,7 +125,7 @@ public class Main {
 
     public static int sumOfNegative(int[] array) {
         int result = 0;
-        for(int x : array) {
+        for (int x : array) {
             if (x < 0) {
                 result += x;
             }
@@ -126,5 +133,55 @@ public class Main {
         return result;
     }
 
+    public static int longestPositiveSequence(int[] array) {
+        int counter = 0;
+        int result = 0;
+        for (int x : array) {
+            if(x > 0)
+                counter++;
+            else
+                if (counter > result) {
+                    result = counter;
+                    counter = 0;
+                }
+        }
+        if (counter > result) {
+            result = counter;
+            counter = 0;
+        }
+        return result;
+    }
+
+    public static void signum(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0)
+                array[i] = -1;
+            if (array[i] > 0)
+                array[i] = 1;
+        }
+        System.out.print("\n");
+        System.out.println(Arrays.toString(array));
+    }
+
+    private static void checkIndex(int index, int[] array) throws Exception {
+        if ((index < 1) || (index > array.length - 1))
+            throw new Exception("Index " + index + " out of range.");
+    }
+
+    public static void reversePart(int[] array, int left, int right) throws Exception {
+        checkIndex(left, array);
+        checkIndex(right, array);
+        while (left < right) {
+
+            int temp = array[right];
+            array[right] = array[left];
+            array[left] = temp;
+
+            left++;
+            right--;
+        }
+        System.out.print("\n");
+        System.out.println(Arrays.toString(array));
+    }
 }
-// PEP8 WARNING NO NEWLINE AT END OF FILE!@!!!!!!!
+// PEP8 WARNING NO NEWLINE AT END OF FILE!@!!11!
