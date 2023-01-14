@@ -40,8 +40,7 @@ public class Mebel {
                 ", iloscNog=" + iloscNog +
                 ']';
     }
-
-    static private int ile;
+    
     public static int getIle() {
         return ile;
     }
@@ -62,6 +61,7 @@ public class Mebel {
         return iloscNog;
     }
 
+    static private int ile;
     private String nazwa;
     private double dlugosc;
     private double szerokosc;
