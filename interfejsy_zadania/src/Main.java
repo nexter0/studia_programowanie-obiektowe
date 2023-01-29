@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +26,9 @@ public class Main {
         Student studentClone = studentGroup.get(4).clone();
         System.out.println(studentClone);
         System.out.println(studentGroup.get(1).compareTo(studentGroup.get(0)));
+        System.out.println("================================");
+        Print.print(group);
     }
+
+
 }
