@@ -13,6 +13,15 @@ public class ArrayUtil {
         return true;
     }
 
+    public static <T extends Comparable<T>> boolean isPalindrome(T[] arr) {
+        for (int i = 0; i <= (arr.length / 2) -1; i++) {
+            if (arr[i].compareTo(arr[arr.length - i -1]) != 0 ) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static <E> void addAllListExt(ArrayList<? extends E> source, ArrayList<E> destination) {
         destination.addAll(source);
     }

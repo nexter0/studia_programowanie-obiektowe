@@ -39,5 +39,15 @@ public class Main {
         ArrayUtil.selectionSort(array3);
         System.out.println(ArrayUtil.isSorted(array3));
         System.out.println(Arrays.toString(array3));
+
+        Integer[] array6a = new Integer[]{1, 2, 3, 2, 1};
+        Integer[] array6b = new Integer[]{1, 2, 3, 3, 2, 1};
+        Integer[] array6c = new Integer[]{1, 2, 3, 3, 1};
+        Integer[] array6d = new Integer[]{1, 2, 3, 4, 2, 1};
+        System.out.println("========================");
+        System.out.println(ArrayUtil.isPalindrome(array6a));
+        System.out.println(ArrayUtil.isPalindrome(array6b));
+        System.out.println(ArrayUtil.isPalindrome(array6c));
+        System.out.println(ArrayUtil.isPalindrome(array6d));
     }
 }
