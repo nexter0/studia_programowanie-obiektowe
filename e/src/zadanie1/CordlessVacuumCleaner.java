@@ -26,6 +26,6 @@ public class CordlessVacuumCleaner extends VacuumCleaner implements Cloneable, N
     public CordlessVacuumCleaner clone() throws CloneNotSupportedException {
         CordlessVacuumCleaner clone = (CordlessVacuumCleaner) super.clone();
         clone.dateOfProd = new Date(this.dateOfProd.getTime());
-        return  clone;
+        return clone;
     }
 }
